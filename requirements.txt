@@ -1,12 +1,15 @@
 asgiref==3.8.1
 diff-match-patch==20230430
 Django==5.1.1
+django-appconf==1.0.6
 django-ckeditor-5==0.2.13
 django-cors-headers==4.4.0
 django-filter==24.3
 django-import-export==4.1.1
 django-modeltranslation==0.19.9
 django-parler==2.3
+django-parler-rest==2.2
+django-select2==8.2.1
 djangorestframework==3.15.2
 drf-yasg==1.21.7
 inflection==0.5.1
