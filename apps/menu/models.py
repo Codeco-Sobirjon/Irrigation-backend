@@ -19,11 +19,12 @@ class Category(TranslatableModel):
     objects = TranslatableManager()
 
     def __str__(self):
-        str_name = self.safe_translation_getter('name', any_language=True)
+        str_name = self.safe_translation_getter('name', any_language=True) or _("Без названия")
         parent = self.parent
 
         while parent:
-            str_name = f'{parent.safe_translation_getter("name", any_language=True)} / ' + str_name
+            parent_name = parent.safe_translation_getter("name", any_language=True) or _("Без названия")
+            str_name = f'{parent_name} / ' + str_name
             parent = parent.parent
 
         return str_name
