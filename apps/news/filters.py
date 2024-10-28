@@ -16,10 +16,10 @@ class NewsFilterSet(FilterSet):
 
     def filter_three_menu_news(self, queryset, name, value):
         if value:
-            return queryset.order_by('-created_at')[:3]
+            return queryset.order_by('-id')[:3]
         return queryset
 
     def filter_four_menu_news(self, queryset, name, value):
         if value:
-            return queryset.order_by('-created_at')[3:7]
+            return queryset.order_by('-id')[3:7]
         return queryset

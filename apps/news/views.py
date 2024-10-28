@@ -45,7 +45,7 @@ class NewsListView(APIView):
         responses={200: NewsSerializer(many=True)}
     )
     def get(self, request, *args, **kwargs):
-        queryset = News.objects.all()
+        queryset = News.objects.all().order_by("-id")
         filterset = self.filterset_class(request.GET, queryset=queryset)
         if not filterset.is_valid():
             return Response(filterset.errors, status=status.HTTP_400_BAD_REQUEST)
