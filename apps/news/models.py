@@ -29,7 +29,7 @@ class News(TranslatableModel):
         return self.safe_translation_getter('title', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("4. Новости")
         verbose_name_plural = _("4. Новости")
 
@@ -63,7 +63,7 @@ class Comment(models.Model):
         return self.full_name
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("5. Комментарий")
         verbose_name_plural = _("5. Комментарий")
 
@@ -108,7 +108,7 @@ class Staffs(TranslatableModel):
         return self.safe_translation_getter('full_name', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("2. Сотрудники университета")
         verbose_name_plural = _("2. Сотрудники университета")
 
@@ -131,7 +131,7 @@ class ContactInfo(TranslatableModel):
         return self.safe_translation_getter('adress', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("3. Контактная информация института")
         verbose_name_plural = _("3. Контактная информация института")
 
@@ -151,7 +151,7 @@ class InfoAboutInstitution(TranslatableModel):
         return self.safe_translation_getter('title', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("6. Другая информация об институте")
         verbose_name_plural = _("6. Другая информация об институте")
 
@@ -169,7 +169,7 @@ class AchievementsCategory(TranslatableModel):
         return self.safe_translation_getter('name', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("7. Категории достижений")
         verbose_name_plural = _("7. Категории достижений")
 
@@ -190,6 +190,6 @@ class AchievementsQuality(TranslatableModel):
         return self.safe_translation_getter('title', any_language=True) or 'Безымянный'
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
         verbose_name = _("8. Достижения Качество")
         verbose_name_plural = _("8. Достижения Качество")
